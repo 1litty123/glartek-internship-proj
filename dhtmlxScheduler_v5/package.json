@@ -1,0 +1,14 @@
+{
+  "name": "dhtmlxscheduler_v5",
+  "version": "1.0.0",
+  "description": "dhtmlxScheduler v.5.0.0 Professional Evaluation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-dnd": "^5.0.0"
+  }
+}
