@@ -30,7 +30,7 @@ export function logout(token) {
         return dispatch => {
                 if (token) {
                         console.log(token)
-                        axios.post(`${consts.API_URL}/Profiles/logout?accessTokens/` + token)
+                        axios.post(`${consts.API_URL}/Profiles/logout/` + token)
                                 .then(resp => {
                                         dispatch({ type: 'LOGOUT_USER', payload: true })
                                 })

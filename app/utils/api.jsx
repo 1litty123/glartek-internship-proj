@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-var instance = axios.create({
-    baseURL: 'http://192.168.65.50:3000/api'
-  });
+var instance = {
+    baseURL: 'http://192.168.65.50:3000/api',
+}
+
+const _token = JSON.parse(localStorage.getItem('_user')).id
+
 
 module.exports = {
     
@@ -43,7 +46,8 @@ module.exports = {
     },
 
     profileLogout: function(_token){
-        return axios.post(instance.baseURL+"/Profiles/logout/"+ _token)
+        console.log(_token)
+        return axios.post(instance.baseURL+"/Profiles/logout?access_token="+ _token)
         .then(function (response) {
             instance.defaults.headers.common['Authorization'] = null
             console.log(response);
@@ -51,5 +55,12 @@ module.exports = {
           .catch(function (error) {
             console.log(error);
           });
+    },
+    getSeverity: function() {
+        return axios.get(instance.baseURL+"/Severities?access_token="+_token)
+        .then(function(response) {
+            return response.data;
+        })
+        
     }
 }

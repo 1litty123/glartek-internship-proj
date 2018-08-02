@@ -11,6 +11,7 @@ import AlarmHistory from '../components/containers/alarms/AlarmHistory'
 import CentralRefrigSynotic from '../components/containers/dashboards/centralRefrig/Synotic'
 import main from '../components/containers/Main'
 import MinorView from '../components/containers/Minor'
+import TaskDemo from "../components/containers/task-demo/task-demo"
 
 export default () => (
 
@@ -23,6 +24,7 @@ export default () => (
             <Route path="alarms" title="alarms" component={Alarms}/> 
             <Route path="alarmsHistory" title="alarms History" component={AlarmHistory}/> 
             <Route path="dashboards/centralRefrig/synotic" title="Central de Refrigeração" component={CentralRefrigSynotic} />
+            <Route path="createTask" title="Create Task" component={TaskDemo} />
             <Route path="*" title="Not Found" component={NotFound} />
         </Route>
     </Router>

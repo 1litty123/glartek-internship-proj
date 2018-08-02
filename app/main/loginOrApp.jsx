@@ -3,7 +3,6 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { connection, onTopicMsg } from '../utils/mqtt'
-import { alarmStream } from '../utils/eventsStream'
 
 import jquery from 'jquery';
 import metismenu from 'metismenu';
@@ -26,7 +25,7 @@ class LoginOrApp extends React.Component {
         // Declare event that receive mqtt msg
         this.props.onTopicMsg()
         // Declare stream of alarms
-        this.props.alarmStream()
+
 
         // Detect if is login or the app
         if (this.props.auth.user) {
@@ -61,5 +60,5 @@ class LoginOrApp extends React.Component {
 }
 
 const mapStateToProps = state => ({ auth: state.auth })
-const mapDispatchToProps = dispatch => bindActionCreators({ validateToken, onTopicMsg, alarmStream }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ validateToken, onTopicMsg }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(LoginOrApp)

@@ -22,11 +22,7 @@ class Navigation extends Component {
                 <ul className='nav metismenu' id='side-menu' ref='menu'>
                     <li className='nav-header'>
                         <div className='dropdown profile-element'>
-                            <span>
-                                {!user
-                                    ? <i className="fa-2x fa fa-user-circle" />
-                                    : <img className="img-circle" src={consts.API_URL+"/Storages/"+ user.id +"/download/"+ user.photography} alt="profile" height="48" width="48" />}
-                            </span>
+                            
                             <a data-toggle='dropdown' className='dropdown-toggle' href='#'>
                                 <span className='clear'> <span className='block m-t-xs'> <strong className='font-bold'>{!user ? 'LOADING' : user.name}</strong>
                                 </span> <span className='text-muted text-xs block'>{!user ? 'LOADING' : user.email}<b className='caret'></b></span> </span> </a>
