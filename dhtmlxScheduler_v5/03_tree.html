@@ -1,5 +1,6 @@
 <!doctype html>
 
+
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>Tree mode</title>
@@ -9,6 +10,12 @@
 	<script src='./codebase/ext/dhtmlxscheduler_timeline.js' type="text/javascript" charset="utf-8"></script>
 	<script src='./codebase/ext/dhtmlxscheduler_treetimeline.js' type="text/javascript" charset="utf-8"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
 	<!-- <script src='./utils/api' type="text/jsx"></script> -->
 	<link rel='stylesheet' type='text/css' href='./codebase/dhtmlxscheduler_material.css'>
 
@@ -50,7 +57,7 @@
 
 		function myNames() {
 			var names;
-			fetch('http://192.168.65.50:3000/api/Teams/5b61a6cf3daafa5eababdc2c/profile?access_token=qrFrNsjiEZsZ15ZbMshtPke3bCDln7JcHD8EEzRYCQwtjoFvdZIG9mb15BoSbELr')
+			fetch('http://192.168.65.50:3000/api/Teams/5b642e6b605b9282d5d51736/profile?access_token=C81vUnXd6puqdnG77JwTohFp3pfx88ABibEaAfUiIMyroBpSOfVr9FgCPZ0CNo4O')
 				.then(res => res.json())
 				.then(data => data.map(x => x.name))
 				.then(data => names = data)
@@ -143,6 +150,11 @@
 
 
 	}
+    // import TaskDemo from '../app/components/containers/task-demo/task-demo.jsx'
+	// ReactDOM.render(
+	// 	<TaskDemo/>,
+	// 	document.getElementByID('Create')
+	// )
 
 </script>
 
@@ -162,5 +174,27 @@
 		</div>
 		<div class="dhx_cal_data">
 		</div>
+		<div id='root'>
+			<p>
+				HI
+			</p>
+		</div>
 	</div>
+	<div id='root'>
+		
+	<script type="module">
+		var require = _require("../app/components/containers/task-demo/task-demo.jsx")
+		ReactDOM.render(
+		<TaskDemo />,
+		document.getElementById('root')
+		);
+</script>
+	</div>
+
+
+
+
 </body>
+
+<!-- <div id="Create">
+</div> -->
