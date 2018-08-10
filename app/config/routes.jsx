@@ -13,6 +13,8 @@ import main from '../components/containers/Main'
 import MinorView from '../components/containers/Minor'
 import TaskDemo from "../components/containers/task-demo/task-demo"
 
+
+
 export default () => (
 
     <Router history={hashHistory}>

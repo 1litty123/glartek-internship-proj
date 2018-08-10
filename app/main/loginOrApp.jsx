@@ -29,11 +29,11 @@ class LoginOrApp extends React.Component {
 
         // Detect if is login or the app
         if (this.props.auth.user) {
-            console.log(this.props.auth.user)
+            console.log(this.props.auth.user, 1)
             this.props.validateToken(this.props.auth.user)
         } else {
             this.props.validateToken(localStorage.getItem('_user'))
-            console.log(localStorage.getItem('_user'))
+            console.log(localStorage.getItem('_user'), 2)
         }
     }
 

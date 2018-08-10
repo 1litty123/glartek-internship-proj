@@ -8,7 +8,7 @@ var instance = {
     baseURL: 'http://192.168.65.50:3000/api',
 }
 
-const _token = JSON.parse(localStorage.getItem('_user')).id
+const _token = localStorage.getItem('_token')
 
 class TaskDemo extends React.Component {
     constructor(props) {
