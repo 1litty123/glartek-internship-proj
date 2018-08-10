@@ -62,5 +62,23 @@ module.exports = {
             return response.data;
         })
         
+    },
+    getTeamId: function() {
+        return axios.get(instance.baseURL+"/Teams?access_token="+_token)
+        .then(function(response) {
+            return response.data
+        })
+    },
+    getElements: function() {
+        return axios.get(instance.baseURL+"/Elements?access_token="+_token)
+        .then(function(response) {
+            return response.data
+        })
+    },
+    getSites: function() {
+        return axios.get(instance.baseURL+"/CompanySites?access_token="+_token)
+        .then(function(response) {
+            return response.data
+        })
     }
 }
